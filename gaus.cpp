@@ -12,6 +12,8 @@
      TF1 *f1 = new TF1("f1", "[0]*TMath::Gaus(x,[1],[2])", 0.0000001, 3); //フィッティングする為の関数の定義。[]で囲んである部分がフィットで変化させるパラメーター。関数を使うときはTMath::expのようにする。TMath::Gaus(Double_t x,Double_t mean,Double_t sigma)
      f1->SetNpx(10000);                                                   //フィットした関数をプロットする細かさ
 
+     f1->SetParameters(1, 0, 3); //パラメータの初期値を決める
+
      f1->SetParNames("constant", "mean[ns]", "sigma[ns]"); //パラメータの名前を決める
      h1->Fit("f1", "", "", 0.0000001, 3);                  //xが0.000000001から10の範囲についてフィット
 
