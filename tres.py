@@ -1,4 +1,4 @@
-from ROOT import TCanvas,TFile,TF1,gStyle
+from ROOT import gStyle,TCanvas,TFile,TF1,TH1F
 
 gStyle.SetOptFit()
 
