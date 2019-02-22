@@ -8,7 +8,7 @@ file = TFile("keiko_1122_9.root")
 t1 = file.Get("v1290")
 v1290.Draw("0.025*(drift[11]-drift[13]) >> h(2000,0.000000001,10)") # h(指定範囲の分割数,左端,右端)
 
-double x
+# double x
 f1 = TF1("f1","[0]*TMath::Gaus(x,[1],[2])",0.000000001,10) # フィッティングする為の関数の定義。[]で囲んである部分がフィットで変化させるパラメーター。関数を使うときはTMath::expのようにする。TMath::Gaus(Double_t x,Double_t mean,Double_t sigma)
 f1.SetNpx(10000) # フィットした関数をプロットする細かさ
 
