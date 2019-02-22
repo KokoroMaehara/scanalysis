@@ -7,7 +7,7 @@ h1 = TH1F("h1","h1 title",10000,-1,10)
 
 file = TFile("keiko_1122_9.root")
 t1 = file.Get("v1290")
-t1.Draw("0.025*(drift[11]-drift[13]) >> h(2000,0.000000001,10)") # h(指定範囲の分割数,左端,右端)
+t1.Draw("0.025*(drift[11]-drift[13])") # "0.025*(drift[11]-drift[13]) >> h(2000,0.000000001,10)" h(指定範囲の分割数,左端,右端)
 
 # double x
 f1 = TF1("f1","[0]*TMath::Gaus(x,[1],[2])",0.000000001,10) # フィッティングする為の関数の定義。[]で囲んである部分がフィットで変化させるパラメーター。関数を使うときはTMath::expのようにする。TMath::Gaus(Double_t x,Double_t mean,Double_t sigma)
