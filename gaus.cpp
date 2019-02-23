@@ -5,7 +5,7 @@
      TCanvas *c1 = new TCanvas("c1", "c1 title", 200, 100, 800, 600); //綺麗に見える設定らしい
      TFile *_file0 = TFile::Open("keiko_1122_9.root");                //TFile::Open("xxx.yyy"):ファイル"xxx.yyy"を開く
 
-     TH1F *h1 = new TH1F("h1", "", 200, 0.0000001, 10);
+     TH1F *h1 = new TH1F("h1", "", 2000, 0.0000001, 10);
      //h1->SetStats(0);                                    //統計ボックスの非表示
      v1290->Draw("0.02441*(drift[9]-drift[6])-12 >> h1"); //h(指定範囲の分割数,左端,右端)
      double x;
