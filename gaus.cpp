@@ -6,7 +6,7 @@
      TFile *_file0 = TFile::Open("keiko_1122_9.root");                //TFile::Open("xxx.yyy"):ファイル"xxx.yyy"を開く
 
      TH1F *h1 = new TH1F("h1", "", 2000, 0.0000001, 10);
-     //h1->SetStats(0);                                    //統計ボックスの非表示
+     h1->SetStats(0);                                     //統計ボックスの非表示
      v1290->Draw("0.02441*(drift[9]-drift[6])-12 >> h1"); //h(指定範囲の分割数,左端,右端)
      double x;
      TF1 *f1 = new TF1("f1", "[0]*TMath::Gaus(x,[1],[2])", 0.0000001, 3); //フィッティングする為の関数の定義。[]で囲んである部分がフィットで変化させるパラメーター。関数を使うときはTMath::expのようにする。TMath::Gaus(Double_t x,Double_t mean,Double_t sigma)
